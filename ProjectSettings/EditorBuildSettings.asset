@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Bom/scenebomja/Game1.unity
     guid: 82dcca697638be84299d88246e026faa
   - enabled: 1
+    path: Assets/Scenes/Bom/scenebomja/Story.unity
+    guid: bf727744f9243024b89d2a2cb30fe55b
+  - enabled: 1
     path: Assets/Scenes/TK/tonkla scenes.unity
     guid: fd50b38b5a7164c4da905ffd2cbfb1f5
   m_configObjects:
