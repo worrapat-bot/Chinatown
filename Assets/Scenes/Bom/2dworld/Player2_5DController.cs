@@ -1,21 +1,20 @@
 using UnityEngine;
 
-/// ควบคุมผู้เล่นแบบ 2D ในฉาก 3D (วิ่งแกน X + กระโดดยก Y, ล็อก Z)
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(CapsuleCollider))]
 public class Player2_5DController : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 7.5f;     // ความเร็ววิ่ง
-    [SerializeField] float accelGround = 60f;    // อัตราเร่งบนพื้น
-    [SerializeField] float accelAir = 30f;       // อัตราเร่งกลางอากาศ
-    [SerializeField] bool faceFlip = true;       // ให้ตัวหันตามทิศวิ่ง (กลับสเกล X)
+    [SerializeField] float moveSpeed = 7.5f;
+    [SerializeField] float accelGround = 60f;
+    [SerializeField] float accelAir = 30f; 
+    [SerializeField] bool faceFlip = true;
 
     [Header("Jump")]
-    [SerializeField] float jumpHeight = 2.6f;    // ความสูงกระโดดประมาณ
-    [SerializeField] int extraJumps = 0;         // 0 = กระโดดเดียว, 1 = ดับเบิลจัมพ์ ฯลฯ
-    [SerializeField] float coyoteTime = 0.12f;   // เผื่อเวลาเท้าลอยนิดหน่อยก็ยังกระโดดได้
-    [SerializeField] float jumpBuffer = 0.12f;   // กดปุ่มก่อนแตะพื้นเล็กน้อยแล้วติดกระโดด
+    [SerializeField] float jumpHeight = 2.6f;
+    [SerializeField] int extraJumps = 0;
+    [SerializeField] float coyoteTime = 0.12f;
+    [SerializeField] float jumpBuffer = 0.12f;
 
     [Header("Ground Check")]
     [SerializeField] Vector3 groundCheckOffset = new Vector3(0, -0.6f, 0);
@@ -23,9 +22,8 @@ public class Player2_5DController : MonoBehaviour
     [SerializeField] LayerMask groundMask;
 
     [Header("Z Lock")]
-    [SerializeField] float fixedZ = 0f;          // ตำแหน่ง Z ที่ต้องการล็อก
+    [SerializeField] float fixedZ = 0f;
 
-    // === Private ===
     Rigidbody rb;
     CapsuleCollider col;
     float coyoteCounter;
